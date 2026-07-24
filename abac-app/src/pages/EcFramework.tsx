@@ -5,6 +5,7 @@ import {
   cecoQualities,
   cecoValueAdds,
   cepFactors,
+  courseInfo,
   dojGuidanceTimeline,
   dojThreeQuestions,
   ermRiskFactors,
@@ -74,6 +75,25 @@ export default function EcFramework() {
                 ))}
               </ul>
             </div>
+            <div className="rounded-md bg-slate-50 p-3 dark:bg-slate-800/60">
+              <h4 className="font-semibold text-slate-900 dark:text-white">
+                About the {courseInfo.fullName} course
+              </h4>
+              <p className="mt-1">{courseInfo.purpose}</p>
+              <ul className="mt-2 list-disc space-y-1 pl-5">
+                {courseInfo.moduleStructure.map((m, i) => (
+                  <li key={i}>{m}</li>
+                ))}
+              </ul>
+              <p className="mt-2">
+                Certification requires a {courseInfo.certification.passingScore} passing score on the final exam
+                ({courseInfo.certification.attemptsAllowed} attempts allowed). {courseInfo.certification.examWindow}.
+                Upon passing, participants receive {courseInfo.certification.credential.toLowerCase()}.
+              </p>
+              <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+                Course support: {courseInfo.supportEmail}
+              </p>
+            </div>
           </div>
         </Accordion>
 
@@ -119,6 +139,29 @@ export default function EcFramework() {
                   ))}
                 </div>
               </div>
+
+              {p.deepDive && (
+                <div>
+                  <h4 className="font-semibold text-slate-900 dark:text-white">Deeper Dive</h4>
+                  <div className="mt-2 space-y-3">
+                    {p.deepDive.map((section, i) => (
+                      <div key={i} className="rounded-md border border-slate-200 p-3 dark:border-slate-700">
+                        <p className="font-medium text-slate-800 dark:text-slate-100">{section.title}</p>
+                        <ul className="mt-1.5 list-disc space-y-1 pl-5 text-slate-600 dark:text-slate-300">
+                          {section.points.map((pt, j) => (
+                            <li key={j}>{pt}</li>
+                          ))}
+                        </ul>
+                        {section.quote && (
+                          <p className="mt-2 border-l-2 border-slate-300 pl-3 text-xs italic text-slate-500 dark:border-slate-600 dark:text-slate-400">
+                            {section.quote}
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {p.examAlerts && (
                 <div className="rounded-md border border-amber-200 bg-amber-50 p-3 dark:border-amber-900 dark:bg-amber-950/40">

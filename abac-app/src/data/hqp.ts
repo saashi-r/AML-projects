@@ -9,6 +9,24 @@ import type {
   TimelineEvent,
 } from "./types";
 
+export const courseInfo = {
+  fullName: "Leading Professional in Ethics and Compliance (LPEC)",
+  purpose: "Prepares participants for the LPEC certification exam.",
+  supportEmail: "training@eci-insights.com",
+  totalModules: 7,
+  moduleStructure: [
+    "Module 1: Introduction and prerequisite materials",
+    "Modules 2–6: Each dedicated to exploring one of the five HQP principles in depth",
+    "Module 7: LPEC certification exam",
+  ],
+  certification: {
+    passingScore: "75%",
+    attemptsAllowed: 2,
+    examWindow: "Must be completed before the 90-day expiration date from course start",
+    credential: "A virtual badge displayable on LinkedIn and in an email signature",
+  },
+};
+
 export const hqpOverview = {
   name: "High Quality Ethics and Compliance Program (HQP)",
   introducedYear: "2016",
@@ -262,6 +280,76 @@ export const hqpPrinciples: HqpPrinciple[] = [
         ],
       },
     ],
+    deepDive: [
+      {
+        title: "Edgar Schein's Three Levels of Culture",
+        points: [
+          "Artifacts — the visible elements: workspace organization, where leaders sit, public displays of values, historical depictions. Artifacts are the first lever for influencing culture.",
+          "Shared values and beliefs — the organization's stated core values, and broad agreement about what matters. Mapping core values to daily activities is the second lever for influencing culture.",
+          "Underlying assumptions — the deepest level: often-unspoken agreements about what is recognized and rewarded, what can be discussed, and what is taboo. Understanding all three levels is key to building a sustainable culture of integrity.",
+        ],
+        quote: "\"Leaders really value employees around here — they listen to our ideas and suggestions\" vs. \"If you see something that doesn't look right, don't report it if you want to keep your job!\" — the same organization can hold contradictory underlying assumptions depending on who you ask.",
+      },
+      {
+        title: "Five Habits for Integrating E&C into Business Decisions",
+        points: [
+          "Stakeholder Analysis — guide employees to consider how a decision affects various individuals or groups, expanding perspective beyond immediate business outcomes.",
+          "Values Mapping — ask employees to map potential business decisions against the organization's core values.",
+          "Continuous Reinforcement — make values discussion a routine part of conversations about business activities and goal achievement, not an exception.",
+          "Story-Sharing — share stories of decisions influenced by core values or exemplary conduct to illustrate values in practice.",
+          "Feedback and Engagement — create regular opportunities for employees to ask questions and give feedback, using real examples and cases to illustrate ethics risks and consequences.",
+        ],
+      },
+      {
+        title: "Ethics-Related Actions (ERAs) of Leaders",
+        points: [
+          "Talking about the priority of ethics in the work being done",
+          "Setting a good example",
+          "Being viewed by employees as being held accountable",
+          "Keeping employees informed about what is going on in the company",
+          "Keeping promises and commitments",
+        ],
+      },
+      {
+        title: "Measuring Culture",
+        points: [
+          "E&C measures: helpline activity, levels and kinds of misconduct and general inquiries, percentage of anonymous calls, perceptions of pressure and stress",
+          "Organizational measures: culture assessment and employee engagement data, attrition and turnover rates, exit interview data, rising or falling operational risk profile",
+          "Measurement techniques: qualitative tools (focus groups, one-on-one interviews, observation) and quantitative tools (culture assessments, pulse surveys, statistically valid sampling)",
+        ],
+      },
+      {
+        title: "Signs of Culture Decline",
+        points: [
+          "Loss of leadership integrity",
+          "Fractured communication and silos",
+          "Misaligned incentives and pressures",
+          "Inconsistent accountability",
+          "Loss of organizational trust and low employee engagement",
+        ],
+      },
+      {
+        title: "Levers for Managing Culture",
+        points: [
+          "Targeted follow-up communications that reinforce key messages",
+          "Engaging the CEO and senior/middle managers to communicate the importance of ethics",
+          "Cultivating leaders' skill in sharing personal ethical-growth stories",
+          "Examining hiring tools (interview guides, behavioral questions) from an E&C perspective",
+          "Consistency and discipline regardless of position or level",
+          "Aligning strategy and execution, and leveraging exit-interview data",
+          "Replacing leaders who are misaligned with E&C goals",
+        ],
+      },
+      {
+        title: "The Business Case for Leadership Character",
+        points: [
+          "A CEO's character reputation correlates with a 5x return on assets and a 26% increase in employee engagement compared to companies with self-focused leadership.",
+          "Keystone character habits of a 'virtuoso leader': integrity, responsibility, forgiveness, and compassion.",
+          "Keystone leadership skills: vision, strategy, executive leadership development, and accountability.",
+        ],
+        quote: "Peter Drucker, the \"father of management\": \"Culture eats strategy for breakfast.\"",
+      },
+    ],
     examAlerts: [
       "Culture is often described as 'how we do things around here.'",
       "Edgar Schein's three levels of culture: visible artifacts, shared beliefs and ideas, and deep (often unspoken) assumptions.",
@@ -328,6 +416,84 @@ export const hqpPrinciples: HqpPrinciple[] = [
           "The organization monitors the long-term career success of employees who report suspected violations",
           "Investigations of retaliatory behavior receive special handling and priority",
           "Substantiated retaliation cases are reviewed by senior management and the board",
+        ],
+      },
+    ],
+    deepDive: [
+      {
+        title: "Retaliation: Scope and Risk Window",
+        points: [
+          "Global Business Ethics Survey (GBES): 65% of employees globally observed one or more types of misconduct in the previous 12 months; 72% of those reported it; 46% of those who reported later experienced retaliation.",
+          "3 out of 4 employees who experienced retaliation experienced it within 3 weeks of their initial report — the highest-risk period requiring the closest oversight.",
+          "30% of employees say their supervisor takes no action when someone retaliates.",
+          "Globally, 75% of employees work in environments where they perceive actions that suppress speaking up.",
+          "Retaliation is lower when employees view top managers, supervisors, and coworkers as accountable for their own conduct.",
+        ],
+        quote: "\"Retaliation against people who report is one of the most destructive actions for E&C programs. It has a toxic influence on the speak-up culture and climate.\"",
+      },
+      {
+        title: "Seven Keys to Non-Retaliatory Environments",
+        points: [
+          "Develop clear and effective code standards",
+          "Foster a culture that values communication",
+          "Create and promote multiple communication channels",
+          "Train managers to understand the how and why of report intake and related processes",
+          "Train employees on how, what, and where to communicate feedback and concerns",
+          "Develop a consistent and repeatable review, triage, and follow-up process for all reports and inquiries",
+          "Implement a problem-focused investigative process",
+        ],
+      },
+      {
+        title: "Psychological Safety",
+        points: [
+          "Amy Edmondson's definition: a belief that one will not be punished or humiliated for speaking up with ideas, questions, concerns, or mistakes — a shared belief that the team is safe for interpersonal risk-taking.",
+          "Google's Project Aristotle research found psychological safety was the number one factor behind top-performing teams' sales and engagement results.",
+        ],
+      },
+      {
+        title: "Leadership Actions That Create a Speak-Up Culture",
+        points: [
+          "Showing appreciation — thank employees for raising concerns, individually and in team settings, and follow up to close the loop on outcomes.",
+          "Creating opportunities to connect — leaders must actually 'walk through their own doors': skip-level meetings, weekly one-on-ones, and time with front-line employees, not just peer leaders.",
+          "Creating a learning organization — build an environment that encourages reasonable risk-taking and reframes 'falling short' as a success if lessons are learned, favoring an open mindset over a closed one.",
+        ],
+      },
+      {
+        title: "Six Elements of a Rudimentary E&C Program",
+        points: [
+          "Written standards of ethical conduct",
+          "Training on those standards",
+          "Advisory resources employees can consult",
+          "Confidential reporting channels",
+          "Performance evaluations that include ethical conduct",
+          "Disciplinary systems for violators",
+        ],
+        quote:
+          "Impact: when all six elements are missing, only 33% of employees report misconduct they observe and 53% of those who do report experience retaliation. When all six are present, reporting rises to 84% and retaliation drops to just 4%. \"Retaliation is reduced when we combine even a rudimentary E&C program with a strong ethics culture.\"",
+      },
+      {
+        title: "Case Management, Triage & Escalation",
+        points: [
+          "Case management should track: reporter name (if known) and date of contact, case type, report type (anonymous/confidential), case summary and details, follow-up contact and closure notice, case disposition, root cause, and closure date.",
+          "Escalation categories requiring greater urgency: workplace violence, sexual harassment, physical safety concerns, environmental reports, drug or alcohol abuse, and misconduct of senior executives.",
+          "Escalation procedures should be regularly tested against recent organizational changes, updated policies, and current investigative protocols.",
+        ],
+      },
+      {
+        title: "Key Metrics for E&C Reporting",
+        points: [
+          "Total reports received (relative to employee population) and reports by intake source",
+          "Anonymous vs. identified reports",
+          "Reports by allegation type, and percentage of allegations vs. advisory calls",
+          "Report substantiation rate, incident/case closure time, and root cause breakdown",
+          "Subject levels and types, and disciplinary actions taken",
+        ],
+      },
+      {
+        title: "Helpline Management: Outsourced vs. Internal",
+        points: [
+          "Outsourcing advantages: greater confidentiality and anonymity, 24/7/365 availability, multi-language support, SSAE 16 Type II certification, and country-by-country regulatory compliance.",
+          "Internal management advantage: faster resolution of advisory calls, at the cost of greater staffing and program investment to match an outsourced helpline's operational reach.",
         ],
       },
     ],
@@ -402,6 +568,67 @@ export const hqpPrinciples: HqpPrinciple[] = [
           "E&C provides input on questions regarding proper disclosure procedures",
           "Employees are trained on cooperation with the government and the consequences of failing to do so",
           "When appropriate, cases are publicized after closure to deter future misconduct",
+        ],
+      },
+    ],
+    deepDive: [
+      {
+        title: "Four Foundational Principles of High-Quality Investigations",
+        points: [
+          "Thorough",
+          "Timely",
+          "Neutral",
+          "Consistent",
+        ],
+        quote: "GBES research: 21% of employees globally did not report potential misconduct they saw because they did not believe any action would be taken in response.",
+      },
+      {
+        title: "Investigative Protocol Best Practices",
+        points: [
+          "Pre-defined logic for triage and assignment, led by trained personnel who are thorough, timely, competent, consistent, respectful, and neutral",
+          "Focus on facts and concerns, not on defending the allegation",
+          "Protect reporters from retaliation throughout the process",
+          "Tie investigative decisions to root cause, historic outcomes, and discipline",
+          "Back-brief stakeholders after a case is closed and report data to ERM or other risk-tracking systems",
+          "Ensure proper documentation of investigative plans and outcomes",
+        ],
+      },
+      {
+        title: "Root Cause Analysis",
+        points: [
+          "Also called 'contributing factor analysis' — seeks to understand the initial conditions that led to misconduct, aiming to alter those conditions to prevent recurrence.",
+          "The 'Five Whys' technique: ask 'why' an incident occurred five times to identify the root cause with greater certainty.",
+          "Looks beyond the immediate corrective action to fundamental or underlying causes — processes, procedures, operations, and cultural conditions.",
+          "Root causes should be documented and reported to senior leadership and the board on a regular basis.",
+        ],
+      },
+      {
+        title: "Contents of a Final Investigative Report",
+        points: [
+          "The incident or issue investigated",
+          "Names of the subject of the inquiry and witnesses interviewed",
+          "Relevant documents and evidence examined",
+          "Summary of relevant policies, guidelines, and standards",
+          "Fact findings",
+          "Issues that could not be resolved, and why",
+          "Recommendations, unrelated to specific disciplinary actions",
+        ],
+      },
+      {
+        title: "The PDSA Continuous Improvement Cycle",
+        points: [
+          "Plan — identify objectives and desired outcomes, and lay out a process for moving forward",
+          "Do — implement the plan and monitor progress by gathering key metrics and data",
+          "Study — assess whether the plan achieved its objectives, or where it fell short and needs revision",
+          "Act — improve the process based on actual results, share findings with stakeholders, and adjust as the cycle continues",
+        ],
+      },
+      {
+        title: "Building the Business Case for Continuous Improvement",
+        points: [
+          "Ways to quantify ROI: projected savings on litigation costs, increased productivity and innovation from higher morale, lower mitigation costs versus the cost of unethical conduct, higher employee retention, and enhanced reputation driving customer acquisition and retention.",
+          "Costs of non-compliance: substantial and immediate loss of capitalization, reduced access to capital markets, diminished shareholder value, and loss of market share.",
+          "Benchmarking methods: internal trends over time, third-party survey data, industry data and events, and practices at peer organizations — alongside employee feedback (surveys, interviews, focus groups) and third-party program audits.",
         ],
       },
     ],

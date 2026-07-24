@@ -56,6 +56,12 @@ export interface SupportingObjective {
   leadingPractices: string[];
 }
 
+export interface DeepDiveSection {
+  title: string;
+  points: string[];
+  quote?: string;
+}
+
 export interface HqpPrinciple {
   id: string;
   number: number;
@@ -64,6 +70,7 @@ export interface HqpPrinciple {
   intent: string[];
   businessObjectives: string[];
   supportingObjectives: SupportingObjective[];
+  deepDive?: DeepDiveSection[];
   examAlerts?: string[];
 }
 

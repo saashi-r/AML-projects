@@ -70,6 +70,7 @@ export const searchDocs: SearchDoc[] = [
       ...p.intent,
       ...p.businessObjectives,
       ...p.supportingObjectives.flatMap((so) => [so.objective, ...so.leadingPractices]),
+      ...(p.deepDive ?? []).flatMap((d) => [d.title, ...d.points, ...(d.quote ? [d.quote] : [])]),
       ...(p.examAlerts ?? []),
     ].join(" "),
     path: `/ec-framework/${p.id}`,
