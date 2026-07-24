@@ -8,6 +8,7 @@ const navItems = [
   { to: "/procedures", label: "Procedures" },
   { to: "/red-flags", label: "Red Flags" },
   { to: "/faq", label: "FAQ" },
+  { to: "/ec-framework", label: "E&C Framework" },
 ];
 
 export default function Layout() {

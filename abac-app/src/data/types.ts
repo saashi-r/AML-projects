@@ -51,7 +51,69 @@ export interface FaqItem {
   answer: string;
 }
 
-export type SearchableKind = "law" | "policy" | "procedure" | "redflag" | "faq";
+export interface SupportingObjective {
+  objective: string;
+  leadingPractices: string[];
+}
+
+export interface HqpPrinciple {
+  id: string;
+  number: number;
+  title: string;
+  statement: string;
+  intent: string[];
+  businessObjectives: string[];
+  supportingObjectives: SupportingObjective[];
+  examAlerts?: string[];
+}
+
+export interface TimelineEvent {
+  id: string;
+  era: string;
+  year: string;
+  title: string;
+  detail: string;
+  citation?: string;
+}
+
+export interface DojGuidanceUpdate {
+  date: string;
+  title: string;
+  points: string[];
+}
+
+export interface MaturityLevel {
+  id: string;
+  letter: string;
+  name: string;
+  description: string;
+}
+
+export interface CecoQuality {
+  quality: string;
+  detail: string;
+}
+
+export interface GlobalStandard {
+  id: string;
+  name: string;
+  year: string;
+  summary: string;
+}
+
+export interface RiskIndicator {
+  type: string;
+  name: string;
+  definition: string;
+  example: string;
+}
+
+export interface AcronymEntry {
+  acronym: string;
+  full: string;
+}
+
+export type SearchableKind = "law" | "policy" | "procedure" | "redflag" | "faq" | "hqp";
 
 export interface SearchDoc {
   kind: SearchableKind;

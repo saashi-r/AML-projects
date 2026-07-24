@@ -6,6 +6,7 @@ import Policy from "./pages/Policy";
 import Procedures from "./pages/Procedures";
 import RedFlags from "./pages/RedFlags";
 import Faq from "./pages/Faq";
+import EcFramework from "./pages/EcFramework";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="procedures/:anchor?" element={<Procedures />} />
         <Route path="red-flags/:anchor?" element={<RedFlags />} />
         <Route path="faq/:anchor?" element={<Faq />} />
+        <Route path="ec-framework/:anchor?" element={<EcFramework />} />
       </Route>
     </Routes>
   );

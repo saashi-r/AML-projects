@@ -3,6 +3,19 @@ import { policySections } from "./policy";
 import { procedures } from "./procedures";
 import { redFlagScenarios } from "./redFlags";
 import { faqItems } from "./faq";
+import {
+  acronyms,
+  cecoQualities,
+  cecoValueAdds,
+  cepFactors,
+  dojGuidanceTimeline,
+  esgEcMapping,
+  globalStandards,
+  hqpOverview,
+  hqpPrinciples,
+  maturityLevels,
+  timeline,
+} from "./hqp";
 import type { SearchDoc } from "./types";
 
 export const searchDocs: SearchDoc[] = [
@@ -41,6 +54,81 @@ export const searchDocs: SearchDoc[] = [
     text: `${f.question} ${f.answer}`,
     path: `/faq/${f.id}`,
   })),
+  {
+    kind: "hqp",
+    id: "overview",
+    title: "Overview: The HQP Framework",
+    text: [hqpOverview.name, ...hqpOverview.keyCharacteristics, ...hqpOverview.fourKeyOutcomes].join(" "),
+    path: "/ec-framework/overview",
+  },
+  ...hqpPrinciples.map((p): SearchDoc => ({
+    kind: "hqp",
+    id: p.id,
+    title: `Principle ${p.number}: ${p.title}`,
+    text: [
+      p.statement,
+      ...p.intent,
+      ...p.businessObjectives,
+      ...p.supportingObjectives.flatMap((so) => [so.objective, ...so.leadingPractices]),
+      ...(p.examAlerts ?? []),
+    ].join(" "),
+    path: `/ec-framework/${p.id}`,
+  })),
+  {
+    kind: "hqp",
+    id: "timeline",
+    title: "Historical Timeline & Legislative Foundations",
+    text: timeline.map((t) => `${t.year} ${t.title} ${t.detail}`).join(" "),
+    path: "/ec-framework/timeline",
+  },
+  {
+    kind: "hqp",
+    id: "doj-guidance",
+    title: "DOJ Corporate Compliance Guidance Evolution",
+    text: [
+      ...dojGuidanceTimeline.map((d) => `${d.date} ${d.title} ${d.points.join(" ")}`),
+      ...cepFactors,
+    ].join(" "),
+    path: "/ec-framework/doj-guidance",
+  },
+  {
+    kind: "hqp",
+    id: "udamo",
+    title: "UDAMO Maturity Model",
+    text: maturityLevels.map((l) => `${l.letter} ${l.name} ${l.description}`).join(" "),
+    path: "/ec-framework/udamo",
+  },
+  {
+    kind: "hqp",
+    id: "ceco",
+    title: "The CECO Role",
+    text: [...cecoValueAdds, ...cecoQualities.map((q) => `${q.quality} ${q.detail}`)].join(" "),
+    path: "/ec-framework/ceco",
+  },
+  {
+    kind: "hqp",
+    id: "risk-management",
+    title: "Risk Management Approach (ERM / GRC / IRM)",
+    text: "Enterprise Risk Management ERM GRC IRM KRI KPI KCI risk value formula radar heat map third-party risk M&A due diligence",
+    path: "/ec-framework/risk-management",
+  },
+  {
+    kind: "hqp",
+    id: "global-standards",
+    title: "Global Standards & ESG",
+    text: [
+      ...globalStandards.map((s) => `${s.name} ${s.summary}`),
+      ...esgEcMapping.flatMap((m) => [...m.esgExamples, ...m.ecExamples]),
+    ].join(" "),
+    path: "/ec-framework/global-standards",
+  },
+  {
+    kind: "hqp",
+    id: "glossary",
+    title: "Glossary of Acronyms",
+    text: acronyms.map((a) => `${a.acronym} ${a.full}`).join(" "),
+    path: "/ec-framework/glossary",
+  },
 ];
 
 export function search(query: string): SearchDoc[] {

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { laws } from "../data/laws";
 import { procedures } from "../data/procedures";
 import { redFlagScenarios } from "../data/redFlags";
+import { hqpPrinciples } from "../data/hqp";
 
 const cards = [
   {
@@ -38,6 +39,13 @@ const cards = [
     icon: "❓",
     description: "Quick answers to the questions employees ask most often about gifts, payments, and third parties.",
     stat: "Common questions",
+  },
+  {
+    to: "/ec-framework",
+    title: "E&C Framework",
+    icon: "🧭",
+    description: "The High Quality Ethics and Compliance Program (HQP) model that ABAC work sits inside — strategy, risk, culture, reporting, and accountability.",
+    stat: `${hqpPrinciples.length} HQP principles`,
   },
 ];
 

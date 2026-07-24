@@ -8,6 +8,7 @@ const kindLabel: Record<string, string> = {
   procedure: "Procedure",
   redflag: "Red Flag",
   faq: "FAQ",
+  hqp: "E&C Framework",
 };
 
 export default function SearchBox() {
