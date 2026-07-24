@@ -1,12 +1,20 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useParams } from "react-router-dom";
 import { redFlagScenarios } from "../data/redFlags";
 
 export default function RedFlags() {
+  const { anchor } = useParams();
   const categories = useMemo(
     () => ["All", ...Array.from(new Set(redFlagScenarios.map((r) => r.category)))],
     []
   );
   const [category, setCategory] = useState("All");
+
+  useEffect(() => {
+    if (anchor) {
+      document.getElementById(anchor)?.scrollIntoView({ block: "center" });
+    }
+  }, [anchor]);
 
   const filtered =
     category === "All" ? redFlagScenarios : redFlagScenarios.filter((r) => r.category === category);

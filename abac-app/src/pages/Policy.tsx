@@ -1,19 +1,34 @@
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { policySections } from "../data/policy";
 
 export default function Policy() {
+  const { anchor } = useParams();
+
+  useEffect(() => {
+    if (anchor) {
+      document.getElementById(anchor)?.scrollIntoView({ block: "start" });
+    }
+  }, [anchor]);
+
+  function scrollToSection(id: string) {
+    document.getElementById(id)?.scrollIntoView({ block: "start", behavior: "smooth" });
+  }
+
   return (
     <div className="grid gap-8 lg:grid-cols-[220px_1fr]">
       <aside className="hidden lg:block">
         <nav className="sticky top-24 space-y-1 text-sm">
           <p className="mb-2 font-semibold text-slate-900 dark:text-white">On this page</p>
           {policySections.map((s) => (
-            <a
+            <button
               key={s.id}
-              href={`#${s.id}`}
-              className="block rounded px-2 py-1 text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
+              type="button"
+              onClick={() => scrollToSection(s.id)}
+              className="block w-full rounded px-2 py-1 text-left text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
             >
               {s.title}
-            </a>
+            </button>
           ))}
         </nav>
       </aside>

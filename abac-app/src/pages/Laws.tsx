@@ -1,12 +1,12 @@
 import { useMemo, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { laws } from "../data/laws";
 import Accordion from "../components/Accordion";
 
 export default function Laws() {
   const [filter, setFilter] = useState<"all" | "extraterritorial">("all");
-  const { hash } = useLocation();
-  const activeId = hash.slice(1);
+  const { anchor } = useParams();
+  const activeId = anchor ?? "";
 
   const filtered = useMemo(
     () => (filter === "extraterritorial" ? laws.filter((l) => l.extraterritorial) : laws),

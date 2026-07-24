@@ -1,10 +1,10 @@
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { procedures } from "../data/procedures";
 import Accordion from "../components/Accordion";
 
 export default function Procedures() {
-  const { hash } = useLocation();
-  const activeId = hash.slice(1);
+  const { anchor } = useParams();
+  const activeId = anchor ?? "";
 
   return (
     <div className="space-y-6">

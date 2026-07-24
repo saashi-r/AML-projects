@@ -1,10 +1,10 @@
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { faqItems } from "../data/faq";
 import Accordion from "../components/Accordion";
 
 export default function Faq() {
-  const { hash } = useLocation();
-  const activeId = hash.slice(1);
+  const { anchor } = useParams();
+  const activeId = anchor ?? "";
 
   return (
     <div className="space-y-6">

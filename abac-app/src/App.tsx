@@ -12,11 +12,11 @@ export default function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="laws" element={<Laws />} />
-        <Route path="policy" element={<Policy />} />
-        <Route path="procedures" element={<Procedures />} />
-        <Route path="red-flags" element={<RedFlags />} />
-        <Route path="faq" element={<Faq />} />
+        <Route path="laws/:anchor?" element={<Laws />} />
+        <Route path="policy/:anchor?" element={<Policy />} />
+        <Route path="procedures/:anchor?" element={<Procedures />} />
+        <Route path="red-flags/:anchor?" element={<RedFlags />} />
+        <Route path="faq/:anchor?" element={<Faq />} />
       </Route>
     </Routes>
   );
